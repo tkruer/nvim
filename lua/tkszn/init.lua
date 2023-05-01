@@ -1,2 +1,2 @@
 print("hey what up")
-require('plugins')
+require('packer')
