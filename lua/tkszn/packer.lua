@@ -32,6 +32,10 @@ use({
 })
 
 
+use {
+    "williamboman/mason.nvim",
+}
+
 	use("github/copilot.vim")
 
 end)
