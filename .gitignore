@@ -1,1 +1,7 @@
-.DS_store
+plugin
+custom
+spell
+ftplugin
+coc-settings.json
+.luarc.json
+lazy-lock.json
