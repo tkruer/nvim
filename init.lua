@@ -10,4 +10,3 @@ require 'mappings'
 require 'telescope'
 require 'undotree'
 require 'nvimtree'
-
