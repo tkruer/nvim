@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "github_dark",
+      colorscheme = "primer_dark",
     },
     {
       "projekt0n/github-nvim-theme",
@@ -73,15 +73,12 @@ return {
     },
 
     {
-      "neovim/nvim-lspconfig",
-      ---@class PluginLspOpts
-      opts = {
-        ---@type lspconfig.options
-        servers = {
-          -- pyright will be automatically installed with mason and loaded with lspconfig
-          pyright = {},
-        },
-      },
+      "LunarVim/primer.nvim",
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require("primer_dark").setup({})
+      end,
     },
 
     {
