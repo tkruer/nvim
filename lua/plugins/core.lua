@@ -1,82 +1,17 @@
 return {
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "primer_dark",
-    },
-    {
-      "projekt0n/github-nvim-theme",
-      -- lazy = false,
-      -- priority = 1000,
-      -- config = function()
-      -- require("github-theme").setup({})
-      -- vim.cmd("colorscheme github_dark")
-      -- end,
-    },
-    {
-      "zbirenbaum/copilot.lua",
-      cmd = "Copilot",
-      event = "InsertEnter",
-      config = function()
-        require("copilot").setup({
-          panel = {
-            enabled = true,
-            auto_refresh = false,
-            keymap = {
-              jump_prev = "[[",
-              jump_next = "]]",
-              accept = "<CR>",
-              refresh = "gr",
-              open = "<M-CR>",
-            },
-            layout = {
-              position = "bottom", -- | top | left | right
-              ratio = 0.4,
-            },
-          },
-          suggestion = {
-            enabled = true,
-            auto_trigger = false,
-            debounce = 75,
-            keymap = {
-              accept = "<M-l>",
-              accept_word = false,
-              accept_line = false,
-              next = "<M-]>",
-              prev = "<M-[>",
-              dismiss = "<C-]>",
-            },
-          },
-          filetypes = {
-            yaml = false,
-            markdown = false,
-            help = false,
-            gitcommit = false,
-            gitrebase = false,
-            hgcommit = false,
-            svn = false,
-            cvs = false,
-            ["."] = false,
-          },
-          copilot_node_command = "node", -- Node.js version must be > 18.x
-          server_opts_overrides = {},
-        })
-      end,
-    },
+    "LazyVim/LazyVim",    
     {
       "folke/trouble.nvim",
       opts = { use_diagnostic_signs = true },
     },
-
     { "folke/trouble.nvim", enabled = false },
-
     {
       "simrat39/symbols-outline.nvim",
       cmd = "SymbolsOutline",
       keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
       config = true,
     },
-
     {
       "hrsh7th/nvim-cmp",
       dependencies = { "hrsh7th/cmp-emoji" },
@@ -85,19 +20,17 @@ return {
         table.insert(opts.sources, { name = "emoji" })
       end,
     },
-
     {
       "nvim-telescope/telescope.nvim",
       keys = {
-      -- add a keymap to browse plugin files
-      -- stylua: ignore
-      {
-        "<leader>fp",
-        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root, hidden = false }) end,
-        desc = "Find Plugin File",
+        {
+          "<leader>fp",
+          function()
+            require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root, hidden = false })
+          end,
+          desc = "Find Plugin File",
+        },
       },
-      },
-      -- change some options
       opts = {
         defaults = {
           layout_strategy = "horizontal",
@@ -107,7 +40,6 @@ return {
         },
       },
     },
-
     {
       "telescope.nvim",
       dependencies = {
@@ -117,18 +49,7 @@ return {
           require("telescope").load_extension("fzf")
         end,
       },
-    },
-
-    {
-      "LunarVim/primer.nvim",
-      lazy = false,
-      priority = 1000,
-      config = function()
-        require("primer_dark").setup({})
-        vim.cmd("colorscheme primer_dark")
-      end,
-    },
-
+    },    
     {
       "neovim/nvim-lspconfig",
       dependencies = {
@@ -145,7 +66,33 @@ return {
       opts = {
         ---@type lspconfig.options
         servers = {
-          tsserver = {},
+          tsserver = {
+            settings = {},
+          },
+          pyright = {
+            settings = {},
+          },
+          pylsp = {
+            settings = {},
+          },
+          tailwindcss = {
+            settings = {},
+          },
+          lua_ls = {
+            settings = {},
+          },
+          jsonls = {
+            settings = {},
+          },
+          rust_analyzer = {
+            settings = {},
+          },
+          html = {
+            settings = {},
+          },
+          mojo = {
+            settings = {},
+          },
         },
         -- you can do any additional lsp server setup here
         -- return true if you don't want this server to be setup with lspconfig
@@ -162,7 +109,7 @@ return {
       },
     },
 
-    { import = "lazyvim.plugins.extras.lang.typescript" },
+
 
     -- add more treesitter parsers
     {
@@ -206,11 +153,9 @@ return {
       "nvim-lualine/lualine.nvim",
       event = "VeryLazy",
       opts = function(_, opts)
-        table.insert(opts.sections.lualine_x, "😄")
+        table.insert(opts.sections.lualine_x, "🤠")
       end,
     },
-
-    -- or you can return new options to override all the defaults
     {
       "nvim-lualine/lualine.nvim",
       event = "VeryLazy",
@@ -221,13 +166,6 @@ return {
       end,
     },
 
-    -- use mini.starter instead of alpha
-    { import = "lazyvim.plugins.extras.ui.mini-starter" },
-
-    -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-    { import = "lazyvim.plugins.extras.lang.json" },
-
-    -- add any tools you want to have installed below
     {
       "williamboman/mason.nvim",
       opts = {
@@ -264,6 +202,7 @@ return {
 
         local luasnip = require("luasnip")
         local cmp = require("cmp")
+        
 
         opts.mapping = vim.tbl_extend("force", opts.mapping, {
           ["<Tab>"] = cmp.mapping(function(fallback)
@@ -291,5 +230,52 @@ return {
         })
       end,
     },
+    -- Some of the hacked together plugins for Theme and Mojo usage
+    {
+      "czheo/mojo.vim",
+      ft = { "mojo" },
+      init = function()
+        vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+          pattern = { "*.🔥" },
+          callback = function()
+            if vim.bo.filetype ~= "mojo" then
+              vim.bo.filetype = "mojo"
+            end
+          end,
+        })
+        vim.api.nvim_create_autocmd("FileType", {
+          pattern = "mojo",
+          callback = function()
+            local modular = vim.env.MODULAR_HOME
+            local lsp_cmd = modular .. "/pkg/packages.modular.com_mojo/bin/mojo-lsp-server"
+            vim.bo.expandtab = true
+            vim.bo.shiftwidth = 4
+            vim.bo.softtabstop = 4
+            vim.lsp.start({
+              name = "mojo",
+              cmd = { lsp_cmd },
+            })
+          end,
+        })
+      end,
+    },
+    {
+      "projekt0n/github-nvim-theme",
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require("github-theme").setup({})
+        vim.cmd("colorscheme github_dark_high_contrast")
+      end,
+    },
+    opts = {
+      colorscheme = "github_dark_high_contrast",
+    },
+    {
+      "projekt0n/github-nvim-theme",
+    },
+    {
+      "LunarVim/primer.nvim",
+    },    
   },
 }
