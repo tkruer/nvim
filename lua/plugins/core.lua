@@ -1,6 +1,6 @@
 return {
   {
-    "LazyVim/LazyVim",    
+    "LazyVim/LazyVim",
     {
       "folke/trouble.nvim",
       opts = { use_diagnostic_signs = true },
@@ -49,7 +49,7 @@ return {
           require("telescope").load_extension("fzf")
         end,
       },
-    },    
+    },
     {
       "neovim/nvim-lspconfig",
       dependencies = {
@@ -108,8 +108,6 @@ return {
         },
       },
     },
-
-
 
     -- add more treesitter parsers
     {
@@ -202,7 +200,6 @@ return {
 
         local luasnip = require("luasnip")
         local cmp = require("cmp")
-        
 
         opts.mapping = vim.tbl_extend("force", opts.mapping, {
           ["<Tab>"] = cmp.mapping(function(fallback)
@@ -265,7 +262,7 @@ return {
       priority = 1000,
       config = function()
         require("github-theme").setup({})
-        vim.cmd("colorscheme github_dark_high_contrast")
+        vim.cmd("colorscheme primer_dark")
       end,
     },
     opts = {
@@ -276,6 +273,6 @@ return {
     },
     {
       "LunarVim/primer.nvim",
-    },    
+    },
   },
 }
