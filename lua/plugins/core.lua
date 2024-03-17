@@ -256,6 +256,13 @@ return {
         })
       end,
     },
+    {
+      "lukas-reineke/virt-column.nvim",
+      config = function()
+        require("virt-column").setup()
+        vim.cmd("")
+      end,
+    },
     { "rebelot/kanagawa.nvim" }, -- Some additional themes in case
     { "folke/tokyonight.nvim" },
     {
