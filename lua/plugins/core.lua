@@ -128,6 +128,8 @@ return {
           "typescript",
           "vim",
           "yaml",
+          "pkl",
+          "go",
         },
       },
     },
@@ -263,6 +265,7 @@ return {
         vim.cmd("")
       end,
     },
+    { "apple/pkl-neovim" },
     { "rebelot/kanagawa.nvim" }, -- Some additional themes in case
     { "folke/tokyonight.nvim" },
     {
