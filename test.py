@@ -7,4 +7,4 @@ def foo() -> bar:
     return bar()
 
 
-
+random.random
