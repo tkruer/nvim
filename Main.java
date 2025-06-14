@@ -1,18 +1,21 @@
 import java.util.ArrayList;
 
-
-
-
 public class Main {
     public static void main(String[] args) {
-       ArrayList arr = new ArrayList<>();
-
-        System.out.println();
-
-       System.out.println(arr);
+        System.out.println("Hello World!");
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Hello");
+        list.add("World");
+        for (String s : list) {
+            System.out.println(s);
+        }
     }
 
     void sayHi() {
+        System.out.println("Hello");
+    }
+
+    public void sayHi2() {
         System.out.println("Hello");
     }
 }
