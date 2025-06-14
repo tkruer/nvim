@@ -13,6 +13,7 @@ return {
         go = { "goimports", "gofmt" },
         rust = { "rustfmt" },
         zig = { "zigfmt" },
+        java = {"google_java_format"},
 
         javascript = { "prettierd", "prettier" },
         javascriptreact = { "prettierd", "prettier" },
@@ -31,7 +32,6 @@ return {
           "black",
         },
 
-        java = { "google_java_format" },
       },
     })
   end,
