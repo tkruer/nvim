@@ -1,7 +1,15 @@
 package main
 
-import "fmt" 
+import (
+	"fmt"
+)
+
+func unused() {
+	fmt.Println("bar")
+}
 
 func main() {
-    fmt.Println("foo")
+	fmt.Println("foo")
+	go unused()
+
 }
