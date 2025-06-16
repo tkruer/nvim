@@ -3,7 +3,7 @@ return {
   opts = {},
   config = function()
     require("conform").setup({
-      format_on_save = { -- you added this earlier
+      format_on_save = {
         lsp_fallback = true,
         timeout_ms = 1000,
       },
@@ -12,7 +12,6 @@ return {
         lua = { "stylua" },
         go = { "goimports", "gofmt" },
         rust = { "rustfmt" },
-        zig = { "zigfmt" },
 
         javascript = { "prettierd", "prettier" },
         javascriptreact = { "prettierd", "prettier" },
@@ -25,12 +24,6 @@ return {
         c = { "clang_format" },
         cpp = { "clang_format" },
         h = { "clang_format" },
-
-        python = {
-          "isort",
-          "black",
-        },
-
       },
     })
   end,

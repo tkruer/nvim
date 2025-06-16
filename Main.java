@@ -18,4 +18,10 @@ public class Main {
     public void sayHi2() {
         System.out.println("Hello");
     }
+
+    public static void sayHi3() {
+        ArrayList<String> list = new ArrayList<>();
+        System.out.println("Hello");
+    }
+
 }

@@ -10,6 +10,4 @@ func unused() {
 
 func main() {
 	fmt.Println("foo")
-	go unused()
-
 }
