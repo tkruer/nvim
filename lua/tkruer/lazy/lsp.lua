@@ -13,17 +13,16 @@ return {
     end,
   },
 
-  { -- CMP core, only one source
+  {
     "hrsh7th/nvim-cmp",
     priority = 1000,
     opts = function(_, opts)
       local cmp = require("cmp")
       opts.sources = { { name = "nvim_lsp" } }
       opts.mapping = cmp.mapping.preset.insert({
-        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- ⏎ accept
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
         ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-        -- optional extras
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
       })
@@ -37,8 +36,7 @@ return {
     end,
   },
 
-  { "hrsh7th/cmp-nvim-lsp" }, -- helper for LSP → cmp
-
+  { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-buffer", enabled = false },
   { "hrsh7th/cmp-path", enabled = false },
   { "hrsh7th/cmp-cmdline", enabled = false },

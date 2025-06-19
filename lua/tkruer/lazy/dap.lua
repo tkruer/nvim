@@ -4,7 +4,7 @@ local function navigate(args)
   local buffer = args.buf
 
   local wid = nil
-  local win_ids = vim.api.nvim_list_wins() -- Get all window IDs
+  local win_ids = vim.api.nvim_list_wins()
   for _, win_id in ipairs(win_ids) do
     local win_bufnr = vim.api.nvim_win_get_buf(win_id)
     if win_bufnr == buffer then
@@ -141,7 +141,7 @@ return {
 
       dap.listeners.after.event_output.dapui_config = function(_, body)
         if body.category == "console" then
-          dapui.eval(body.output) -- Sends stdout/stderr to Console
+          dapui.eval(body.output)
         end
       end
     end,

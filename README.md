@@ -1,7 +1,30 @@
-# Neovim config
+# My personal config
 
-I use LazyVim it's a simple and easy to use Neovim configuration. My config is honestly pretty hacked together and needs a fresh cleanup. I'm planning to hopefully get around to it soon as I'd like to change the styling and LSP setup. But, if it works, it works.
+changes are made quite frequently but I try to keep my config minimal.
 
-## For Future Reference
+- [[Neovim](https://neovim.io/)]
+- [[Lazy](https://github.com/folke/lazy.nvim)]
 
-- [Checkout Docs for Github Copilot](https://docs.github.com/en/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vimneovim#learning-to-use-github-copilot-in-vimneovim)
+## Installation
+
+```bash
+git clone https://github.com/tkruer/nvim.git ~/.config/nvim
+```
+
+## Usage
+
+```bash
+nvim
+```
+
+## Features
+
+- Neovim 0.11.2
+- Lazy 0.8
+- Treesitter
+
+## image
+
+![image](https://github.com/tkruer/nvim/docs/img.png)
+
+
