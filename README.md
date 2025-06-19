@@ -25,6 +25,6 @@ nvim
 
 ## image
 
-![image](https://github.com/tkruer/nvim/docs/img.png)
+![image](https://github.com/tkruer/nvim/blob/main/docs/img.png)
 
 
