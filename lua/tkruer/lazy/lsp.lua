@@ -10,6 +10,16 @@ return {
       local caps = require("cmp_nvim_lsp").default_capabilities()
 
       lsp.pyright.setup({ capabilities = caps })
+      lsp.rust_analyzer.setup({
+        cmd = { vim.fn.stdpath("data") .. "/mason/bin/rust-analyzer" },
+        capabilities = caps,
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = { allFeatures = true },
+            checkOnSave = true,
+          },
+        },
+      })
     end,
   },
 
